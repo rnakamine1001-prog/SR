@@ -239,7 +239,7 @@
     // due items
     const due = st.items
       .map(it => ({...it, next: fromISO(it.nextReviewAt)}))
-      .filter(it => it.next <= now)
+      .filter(it => it.next <= todayEnd)
       .sort((a,b) => a.next - b.next);
 
     dueCount.textContent = `${due.length}件`;
